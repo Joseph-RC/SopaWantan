@@ -131,10 +131,22 @@
     .cont-cartas {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 50px;
         gap: 20px;
     }
+    .cont-cartas .card {
+        width: 100%;
+    }
+    .cont-cartas .card-body a {
+        
+    }
 }
+
+
+
+
+
 
 
 /* Elementos de Boostrap */
@@ -180,7 +192,6 @@ body {
 
 .conmot-img img {
     border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
     width: 400px;
 }
 
@@ -223,17 +234,6 @@ body {
     gap: 40px;
 }
 
-.cont-cartas .card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-    width: 320px;
-    margin-bottom: 32px;
-    padding: 0;
-    text-align: center;
-}
 .cont-cartas .card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px rgba(0,0,0,0.13);
