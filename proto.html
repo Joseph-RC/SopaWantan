@@ -1,0 +1,38 @@
+<!-- Ejemplos de imágenes -->
+<div>
+  <img src="imagen-que-no-existe.jpg" alt="Imagen rota">
+</div>
+
+<div>
+  <img src="" alt="Imagen sin src">
+</div>
+
+<div>
+  <img src="https://picsum.photos/200" alt="Imagen válida">
+</div>
+
+<script>
+  document.querySelectorAll("img").forEach(img => {
+    const fallbackHTML = `
+      <div class="fallback" style="text-align:center; color:red;">
+        <img src="imagen-alternativa.jpg" alt="Imagen alternativa" width="120">
+        <p>⚠️ Imagen no disponible</p>
+      </div>
+    `;
+
+    const mostrarFallback = () => {
+      // Crear un contenedor temporal y reemplazar el <img>
+      const temp = document.createElement("div");
+      temp.innerHTML = fallbackHTML;
+      img.replaceWith(temp.firstElementChild);
+    };
+
+    // Si falla al cargar
+    img.onerror = mostrarFallback;
+
+    // Si el src está vacío o null
+    if (!img.getAttribute("src")) {
+      mostrarFallback();
+    }
+  });
+</script>

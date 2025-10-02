@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white px-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <!-- Izquierda: Texto de marca + logo (logo centrado en desktop) -->
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center text-dark" href="#">
+                <span class="me-2">Mi Sitio</span>
+                <!-- Logo con fondo circular -->
+                <div class="navbar-logo d-none d-md-flex">
+                    <img src="../img/ico-chifa.png" alt="Logo" class="logo-img rounded-circle">
+                </div>
+            </a>
+        </div>
+
+        <!-- Centro: Logo centrado (solo en desktop) -->
+        <div class="navbar-logo d-none d-md-flex">
+            <img src="../img/ico-chifa.png" alt="Logo" class="logo-img rounded-circle">
+        </div>
+
+        <!-- Derecha: Login + hamburguesa -->
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+                aria-controls="offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-white px-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <!-- Izquierda: Texto de marca + logo (logo centrado en desktop) -->
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center text-dark" href="#">
+                <span class="me-2">Mi Sitio</span>
+                <!-- Logo con fondo circular -->
+                <div class="navbar-logo d-none d-md-flex">
+                    <img src="../img/ico-chifa.png" alt="Logo" class="logo-img rounded-circle">
+                </div>
+            </a>
+        </div>
+
+        <!-- Centro: Logo centrado (solo en desktop) -->
+        <div class="navbar-logo d-none d-md-flex">
+            <img src="../img/ico-chifa.png" alt="Logo" class="logo-img rounded-circle">
+        </div>
+
+        <!-- Derecha: Login + hamburguesa -->
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+                aria-controls="offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+    </div>
+</nav>

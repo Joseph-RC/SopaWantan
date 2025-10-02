@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrusel con botones externos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        /* Contenedor padre con flexbox */
+c
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            padding: 1rem;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .libro-reclam img{
+            width: 200px;
+            filter: grayscale() brightness(5); 
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark px-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            <!-- Izquierda: Logo o Texto -->
+            <a class="navbar-brand d-flex align-items-center text-light" href="#">
+                <span>Mi Sitio</span>
+            </a>
+
+            <!-- Derecha: Login + Hamburguesa -->
+            <div class="navbar-right">
+                <!-- Botón de Login -->
+                <button class="btn btn-outline-light d-flex align-items-center" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
+                    <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+                </button>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+                    aria-controls="offcanvasMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas (menú hamburguesa) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel"><i class="bi bi-person-circle me-2"></i>Iniciar sesión
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Solo HTML5 con required -->
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="tu@email.com"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="********"
+                                required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberCheck">
+                                <label class="form-check-label" for="rememberCheck">
+                                    Recuérdame
+                                </label>
+                            </div>
+                            <a href="#" class="small">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <!-- Este botón dispara la validación automáticamente -->
+                    <button type="submit" form="loginForm" class="btn btn-primary">Ingresar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="container-fluid p-0">
+        <div class="bg-secondary text-white text-center py-5">
+            <h1 class="display-4">Bienvenido a MiMarca</h1>
+            <p class="lead">Sabores únicos que conquistan tu paladar</p>
+            <a href="#" class="btn btn-primary btn-lg">Ordenar Ahora</a>
+        </div>
+    </section>
+
+    <p><!--Nada--></p>
+
+
+    <!-- Carrusel -->
+    <h2 class="text-center mb-4">Productos Destacados</h2>
+    <div class="carousel-wrapper">
+        <!-- Botón izquierdo -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#simpleCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <!-- Carrusel -->
+        <div id="simpleCarousel" class="carousel slide" data-bs-ride="carousel" style="flex:1;">
+            <div class="carousel-inner">
+
+                <!-- Página 1 -->
+                <div class="carousel-item active">
+                    <div class="row text-center">
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3">
+                                <h5>Producto 1</h5>
+                                <p>Descripción breve</p>
+                                <p><strong>S/ 20.00</strong></p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3">
+                                <h5>Producto 2</h5>
+                                <p>Descripción breve</p>
+                                <p><strong>S/ 30.00</strong></p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3">
+                                <h5>Producto 3</h5>
+                                <p>Descripción breve</p>
+                                <p><strong>S/ 40.00</strong></p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Página 2 -->
+                <div class="carousel-item">
+                    <div class="row text-center">
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3">
+                                <h5>Producto 4</h5>
+                                <p>Descripción breve</p>
+                                <p><strong>S/ 25.00</strong></p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3">
+                                <h5>Producto 5</h5>
+                                <p>Descripción breve</p>
+                                <p><strong>S/ 35.00</strong></p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3">
+                                <h5>Producto 6</h5>
+                                <p>Descripción breve</p>
+                                <p><strong>S/ 45.00</strong></p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Botón derecho -->
+        <button class="carousel-control-next" type="button" data-bs-target="#simpleCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <!-- Texto (izquierda en escritorio) -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+                <h2>Conoce más sobre nuestra tienda</h2>
+                <p>
+                    Aquí puedes escribir un texto de presentación de tu negocio o producto.
+                    Explica los beneficios, por qué confiar en ti y qué ofreces al cliente.
+                </p>
+            </div>
+
+            <!-- Video (derecha en escritorio) -->
+            <div class="col-12 col-md-6">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de presentación"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="footer bg-dark text-light">
+  <footer class="container py-5">
+    <div class="row">
+
+      <!-- Columna izquierda: Logo + derechos + redes -->
+      <div class="col-md-3 mb-3">
+        <!-- Logo -->
+        <a href="#">
+          <img src="https://via.placeholder.com/150x60?text=LOGO" alt="Logo Tienda" class="img-fluid mb-3">
+        </a>
+        <p class="mb-0">© 2025 Mi Sitio</p>
+
+        <!-- Redes sociales -->
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x fs-4"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+        </div>
+      </div>
+
+      <!-- Columna central: enlaces -->
+      <div class="col-md-6 mb-3">
+        <div class="row">
+          <!-- Sección -->
+          <div class="col-4">
+            <h5>Sección</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Inicio</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Productos</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Servicios</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Soporte -->
+          <div class="col-4">
+            <h5>Soporte</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Ayuda</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Políticas</a></li>
+            </ul>
+          </div>
+
+          <!-- Información -->
+          <div class="col-4">
+            <h5>Información</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Nosotros</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Blog</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Términos</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Privacidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Libro de Reclamaciones -->
+      <div class="col-md-3 mb-3 text-md-end text-center">
+        <h5>Libro de Reclamaciones</h5>
+        <a href="#" class="libro-reclam">
+          <img src="../img/libro-reclamaciones.png" alt="Libro de Reclamaciones" class="img-fluid mt-2">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+</div>
+
+
+
+
+
+
+
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger"><i class="bi bi-gift-fill me-2"></i>¡Nueva Promoción!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        Solo por esta semana disfruta de <strong>2x1 en nuestros platos principales</strong>.
+                        ¡Aprovecha la promoción antes de que termine!
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary">Ver Promoción</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Esperar a que todo el DOM esté cargado
+        document.addEventListener("DOMContentLoaded", function () {
+            var promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+            // promoModal.show();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+/*=========================================
+  FUENTES
+=========================================*/
+@font-face {
+    font-family: "Konigsberg-Demo-Alt";
+    src: url("/assets/font/Konigsberg Demo.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*=========================================
+  FALLBACKS Y UTILIDADES
+=========================================*/
+.fallback {
+    text-align: center;
+}
+
+/* ========== NAVBAR O HEADER ==========*/
+/* Logo circular centrado */
+/* Logo circular centrado en desktop */
+.navbar-logo.d-md-flex {
+    width: clamp(80px, 15vw, 180px);
+    height: clamp(80px, 15vw, 180px);
+    background-color: rgb(255, 255, 255);
+    /* border: 5px solid rgb(149, 149, 149); */
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* borde superior */
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    overflow: hidden; /* para que la imagen no se salga del círculo */
+}
+
+.navbar-logo.d-md-flex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* centra y recorta si es necesario */
+}
+
+.logo-img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    filter: grayscale();
+}
+
+/* Logo móvil (junto al texto) */
+.navbar-logo.d-md-none {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .navbar-logo.d-md-flex {
+        display: none; /* Ocultamos logo central en móvil */
+    }
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/*=========================================
+  LOGO PIE DE PÁGINA (Libro de Reclamaciones)
+=========================================*/
+.libro-reclam img {
+    width: 200px;
+    filter: grayscale() brightness(5);
+}
+
+/*=========================================
+  CARRUSEL SUPERIOR
+=========================================*/
+.carousel .fallback {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding-block: 200px;
+}
+
+.carousel .fallback img {
+    width: 80px;
+    filter: grayscale(100%) brightness(0.4);
+}
+
+/*=========================================
+  CARRUSEL DE PRODUCTOS
+=========================================*/
+
+/* Padding lateral general */
+#carouselProducts {
+    position: relative;
+    padding: 40px 80px; /* separa todo el carrusel de los bordes de la página */    
+}
+#carouselProducts .titulo-principal {
+    font-family: "Konigsberg-Demo-Alt";
+    font-size: 30px;
+}
+@media (max-width: 768px) {
+    #carouselProducts .titulo-principal {
+        text-align: center;
+        font-size: 25px;
+    }
+}
+
+/* Botones del carrusel de productos */
+#carouselProducts .carousel-control-prev,
+#carouselProducts .carousel-control-next {
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Posición de flechas */
+#carouselProducts .carousel-control-prev {
+    left: 30px;
+}
+
+#carouselProducts .carousel-control-next {
+    right: 30px;
+}
+
+/* Flechas negras personalizadas solo para este carrusel */
+#carouselProducts .carousel-control-prev-icon,
+#carouselProducts .carousel-control-next-icon {
+    background-image: none;
+    width: 1rem;
+    height: 1rem;
+    border: solid black;
+    border-width: 0 0.3rem 0.3rem 0;
+    display: inline-block;
+    padding: 0.3rem;
+}
+
+#carouselProducts .carousel-control-prev-icon {
+    transform: rotate(135deg);
+}
+
+#carouselProducts .carousel-control-next-icon {
+    transform: rotate(-45deg);
+}
+
+/*=========================================
+  PIE DE PÁGINA
+=========================================*/
+.footer {
+    padding-inline: 50px;
+}
+
+.footer img {
+    width: 100px;
+    filter: grayscale() brightness();
+}
