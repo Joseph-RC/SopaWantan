@@ -1,0 +1,558 @@
+/*=========================================
+  FUENTES
+=========================================*/
+@font-face {
+    font-family: "Konigsberg";
+    src: url("/assets/font/Konigsberg.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "JUMBOX";
+    src: url("/assets/font/JUMBOX.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*=========================================
+  UTILIDADES
+=========================================*/
+.fallback {
+    text-align: center;
+}
+
+/*=========================================
+  NAVBAR / HEADER
+=========================================*/
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    padding: 0;
+}
+
+.navbar span {
+    font-family: JUMBOX, arial;
+    font-size: 55px;
+    background: linear-gradient(90deg, #ffa14e, #ff7b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Logo central en desktop */
+.navbar-logo.d-md-flex {
+    width: clamp(80px, 15vw, 220px);
+    height: clamp(80px, 15vw, 220px);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+}
+
+.navbar-logo.d-md-flex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    border: 7px solid black;
+}
+
+/* Logo móvil */
+.navbar-logo.d-md-none {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .navbar-logo.d-md-flex {
+        display: none;
+    }
+}
+
+/* Hamburguesa */
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler i {
+    color: white !important; /* blanco para contrastar */
+}
+
+/* Botón login */
+.btn-login {
+    background-color: #ffa14e;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.btn-login:hover {
+    background-color: #ff7b00;
+    box-shadow: 0 0 10px rgba(255,161,78,0.6);
+}
+
+/*=========================================
+  LOGO PIE DE PÁGINA (Libro de Reclamaciones)
+=========================================*/
+.libro-reclam img {
+    width: 200px;
+    filter: grayscale() brightness(5);
+}
+
+/*=========================================
+  CARRUSEL SUPERIOR (Main Banner)
+=========================================*/
+.carousel .fallback {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding-block: 200px;
+}
+.carousel .fallback img {
+    width: 80px;
+    filter: grayscale(100%) brightness(0.4);
+}
+
+/* Flechas del carrusel principal */
+#carouselMain .carousel-control-prev-icon,
+#carouselMain .carousel-control-next-icon {
+    background-image: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid black;
+    border-width: 0 0.5rem 0.5rem 0;
+    display: inline-block;
+    padding: 0.3rem;
+}
+#carouselMain .carousel-control-prev-icon {
+    transform: rotate(135deg);
+}
+#carouselMain .carousel-control-next-icon {
+    transform: rotate(-45deg);
+}
+
+/*=========================================
+  CARRUSEL DE PRODUCTOS
+=========================================*/
+#carouselProducts {
+    position: relative;
+    padding: 30px 80px; /* separa todo el carrusel de los bordes */
+}
+#carouselProducts .titulo-principal {
+    font-family: Konigsberg, arial;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    #carouselProducts {
+        padding: 20px;
+    }
+    #carouselProducts .titulo-principal {
+        text-align: center;
+        font-size: 25px;
+    }
+}
+
+/* Botones del carrusel */
+#carouselProducts .carousel-control-prev,
+#carouselProducts .carousel-control-next {
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#carouselProducts .carousel-control-prev { left: 30px; }
+#carouselProducts .carousel-control-next { right: 30px; }
+
+/* Flechas negras solo para este carrusel */
+#carouselProducts .carousel-control-prev-icon,
+#carouselProducts .carousel-control-next-icon {
+    background-image: none;
+    width: 1rem;
+    height: 1rem;
+    border: solid black;
+    border-width: 0 0.3rem 0.3rem 0;
+    display: inline-block;
+    padding: 0.3rem;
+}
+#carouselProducts .carousel-control-prev-icon { transform: rotate(135deg); }
+#carouselProducts .carousel-control-next-icon { transform: rotate(-45deg); }
+
+/* Tarjetas de productos */
+#carouselProducts .carousel-item {
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+#carouselProducts .carousel-item .card {
+    margin: 10px;/*=========================================
+  FUENTES
+=========================================*/
+@font-face {
+    font-family: "Konigsberg";
+    src: url("/assets/font/Konigsberg.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "JUMBOX";
+    src: url("/assets/font/JUMBOX.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*=========================================
+  UTILIDADES
+=========================================*/
+.fallback {
+    text-align: center;
+}
+
+/*=========================================
+  NAVBAR / HEADER
+=========================================*/
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    padding: 0;
+}
+
+.navbar span {
+    font-family: JUMBOX, arial;
+    font-size: 55px;
+    background: linear-gradient(90deg, #ffa14e, #ff7b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Logo central en desktop */
+.navbar-logo.d-md-flex {
+    width: clamp(80px, 15vw, 220px);
+    height: clamp(80px, 15vw, 220px);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+}
+
+.navbar-logo.d-md-flex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    border: 7px solid black;
+}
+
+/* Logo móvil */
+.navbar-logo.d-md-none {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .navbar-logo.d-md-flex {
+        display: none;
+    }
+}
+
+/* Hamburguesa */
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler i {
+    color: white !important; /* blanco para contrastar */
+    font-size: 1.5rem;
+}
+
+/* Botón login */
+.btn-login {
+    background-color: #ffa14e;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+    padding: 5px 15px;
+}
+.btn-login:hover {
+    background-color: #ff7b00;
+    box-shadow: 0 0 10px rgba(255,161,78,0.6);
+}
+
+/*=========================================
+  LOGO PIE DE PÁGINA (Libro de Reclamaciones)
+=========================================*/
+.libro-reclam img {
+    width: 200px;
+    filter: grayscale() brightness(5);
+}
+
+/*=========================================
+  CARRUSEL SUPERIOR (Main Banner)
+=========================================*/
+.carousel .fallback {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding-block: 200px;
+}
+.carousel .fallback img {
+    width: 80px;
+    filter: grayscale(100%) brightness(0.4);
+}
+
+/* Flechas del carrusel principal */
+#carouselMain .carousel-control-prev-icon,
+#carouselMain .carousel-control-next-icon {
+    background-image: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid black;
+    border-width: 0 0.5rem 0.5rem 0;
+    display: inline-block;
+    padding: 0.3rem;
+}
+#carouselMain .carousel-control-prev-icon {
+    transform: rotate(135deg);
+}
+#carouselMain .carousel-control-next-icon {
+    transform: rotate(-45deg);
+}
+
+/*=========================================
+  CARRUSEL DE PRODUCTOS
+=========================================*/
+#carouselProducts {
+    position: relative;
+    padding: 30px 80px; /* separa todo el carrusel de los bordes */
+}
+#carouselProducts .titulo-principal {
+    font-family: Konigsberg, arial;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    #carouselProducts {
+        padding: 20px;
+    }
+    #carouselProducts .titulo-principal {
+        text-align: center;
+        font-size: 25px;
+    }
+}
+
+/* Botones del carrusel */
+#carouselProducts .carousel-control-prev,
+#carouselProducts .carousel-control-next {
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#carouselProducts .carousel-control-prev { left: 30px; }
+#carouselProducts .carousel-control-next { right: 30px; }
+
+/* Flechas negras solo para este carrusel */
+#carouselProducts .carousel-control-prev-icon,
+#carouselProducts .carousel-control-next-icon {
+    background-image: none;
+    width: 1rem;
+    height: 1rem;
+    border: solid black;
+    border-width: 0 0.3rem 0.3rem 0;
+    display: inline-block;
+    padding: 0.3rem;
+}
+#carouselProducts .carousel-control-prev-icon { transform: rotate(135deg); }
+#carouselProducts .carousel-control-next-icon { transform: rotate(-45deg); }
+
+/* Tarjetas de productos */
+#carouselProducts .carousel-item {
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+#carouselProducts .carousel-item .card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* En móvil, las tarjetas se apilan */
+@media (max-width: 768px) { 
+    #carouselProducts .carousel-item .card {
+        flex-direction: column;
+    }
+}
+
+#carouselProducts .carousel-item .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen dentro de tarjeta */
+#carouselProducts .carousel-item .card img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    #carouselProducts .carousel-item .card img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Cuerpo de tarjeta */
+#carouselProducts .card-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#carouselProducts .card-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#carouselProducts .card-price {
+    color: #ff7b00;
+    font-size: 18px;
+    margin: 5px 0;
+}
+#carouselProducts .btn-buy {
+    background-color: #ffa14e;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+#carouselProducts .btn-buy:hover {
+    background-color: #ff7b00;
+    box-shadow: 0 0 10px rgba(255,161,78,0.6);
+}
+
+/*=========================================
+  PIE DE PÁGINA
+=========================================*/
+.footer {
+    padding-inline: 50px;
+}
+.footer img {
+    width: 100px;
+    filter: grayscale() brightness();
+}
+
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    padding-left: 10px; /* COMPROBAR DESPUES (BORRAR)*/
+}
+@media (max-width: 768px) { 
+    #carouselProducts .carousel-item .card {
+        padding: 0;
+    }
+}
+
+#carouselProducts .carousel-item .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen dentro de tarjeta */
+#carouselProducts .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cuerpo de tarjeta */
+#carouselProducts .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#carouselProducts .card-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#carouselProducts .card-price {
+    color: #ff7b00;
+    font-size: 18px;
+    margin: 5px 0;
+}
+#carouselProducts .btn-buy {
+    background-color: #ffa14e;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+#carouselProducts .btn-buy:hover {
+    background-color: #ff7b00;
+    box-shadow: 0 0 10px rgba(255,161,78,0.6);
+}
+
+/*=========================================
+  PIE DE PÁGINA
+=========================================*/
+.footer {
+    padding-inline: 50px;
+}
+.footer img {
+    width: 100px;
+    filter: grayscale() brightness();
+}
+
+/*---------- MORAL PROMOCIONAL ----------*/
+/* Imagen del modal */
+.promo-img img {
+  object-fit: cover;
+  max-height: 250px;
+}
+
+/* Botón principal */
+#promoModal .btn-warning {
+  background: linear-gradient(90deg, #ffa14e, #ff7b00);
+  border: none;
+  border-radius: 30px;
+  transition: 0.3s ease-in-out;
+}
+#promoModal .btn-warning:hover {
+  background: #ff7b00;
+  box-shadow: 0 0 15px rgba(255, 161, 78, 0.7);
+}
